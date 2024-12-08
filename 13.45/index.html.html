@@ -1,0 +1,463 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn-style Comment System</title>
+    <link rel="stylesheet" href="styles/linkedin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+
+
+</head>
+
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <i class="fab fa-linkedin" style="color: #0a66c2; font-size: 28px;"></i>
+                <div class="nav-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="검색">
+                </div>
+            </div>
+            <div class="nav-links">
+                <div class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>홈</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-user-friends"></i>
+                    <span>인맥</span>
+                    <div class="notification-dot">3</div>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>채용공고</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>메시지</span>
+                </div>
+                <div class="nav-item">
+                    <i class="fas fa-bell"></i>
+                    <span>알림</span>
+                    <div class="notification-dot">5</div>
+                </div>
+                <div class="nav-item">
+                    <div class="profile-mini">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span>나</span>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="main-content">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <div class="profile-card">
+                <div class="profile-background"></div>
+                <div class="profile-info">
+                    <div class="profile-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h2>Jihoon Choi</h2>
+                    <p>Software Engineer | AI Enthusiast</p>
+                </div>
+                <div class="view-stats">
+                    <p>
+                        <span>Profile view</span>
+                        <strong>38</strong>
+                    </p>
+                    <p>
+                        <span>Post view</span>
+                        <strong>125</strong>
+                    </p>
+                </div>
+                <div class="resources">
+                    <a href="#"><i class="fas fa-bookmark"></i>My posts</a>
+                    <a href="#"><i class="fas fa-user-friends"></i> Group</a>
+                    <a href="#"><i class="fas fa-calendar-alt"></i> Event</a>
+                    <a href="#"><i class="fas fa-hashtag"></i> Followed Hashtags</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Content -->
+        <div class="center-content">
+            <!-- Post Creation -->
+            <div class="post-creation">
+                <div class="post-input">
+                    <div class="profile-mini">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <button class="post-start-btn">Create Post</button>
+                </div>
+                <div class="post-types">
+                    <button><i class="fas fa-image" style="color: #70b5f9;"></i> Photos</button>
+                    <button><i class="fas fa-video" style="color: #7fc15e;"></i> Videos</button>
+                    <button><i class="fas fa-calendar-alt" style="color: #e7a33e;"></i> Event</button>
+                    <button><i class="fas fa-newspaper" style="color: #fc9295;"></i> Write</button>
+                </div>
+            </div>
+
+            <!-- Main Post -->
+            <div class="post">
+                <div class="post-header">
+                    <div class="profile-mini">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h3>Yejoon Song</h3>
+                        <p>Senior Data Scientist at Google | AI Researcher</p>
+                        <div class="post-time">
+                            2 hours ago • <i class="fas fa-globe-americas"></i>
+                        </div>
+                    </div>
+                    <button class="more-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+
+                <div class="post-content">
+                    🎓 Recent Field Research: Yutori Generation Study 🇯🇵
+                    Just completed fascinating research exploring Japan's Yutori Sedai phenomenon! Our study revealed how educational reforms shaped an entire generation's unique perspective on success and minimal living.
+                    <br>
+                    <br>
+                    Key Findings:<br>
+                    📊 Strong correlation between Yutori education system and evolving societal values
+                    <br>🌏 Distinctive adaptation to global interconnectedness
+                    <br>🔍 Redefined metrics of personal achievement
+                    Interested in connecting with researchers studying educational policy or Japanese society! 🤝
+                    <br>
+                    <br>
+                    <div class="Hashtag">#AcademicResearch #JapaneseSociety #EducationalPolicy #SocialScience</div>
+                    <img src="../static/tokyo.jpg" width = "521px">
+                
+                </div>
+
+                <div class="post-metrics">
+                    <div class="reactions">
+                        <div class="reaction-icons">
+                            <i class="fas fa-thumbs-up like"></i>
+                            <i class="fas fa-lightbulb idea"></i>
+                            <i class="fas fa-heart love"></i>
+                        </div>
+                        <span>789</span>
+                    </div>
+                    <div> 48 comments • 12 shares</div>
+                </div>
+
+                <div class="post-actions">
+                    <button><i class="far fa-thumbs-up"></i> Likes</button>
+                    <button onclick="showCommentAssistant()"><i class="far fa-comment"></i> Comment</button>
+                    <button><i class="fas fa-share"></i> Share</button>
+                    <button><i class="far fa-paper-plane"></i> Send</button>
+                </div>
+
+                <div class="comments-list" id="commentsList"></div>
+            </div>
+
+                        
+                     
+
+            
+        </div>
+        
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="news-card">
+                <h2>LinkedIn News</h2>
+                <div class="news-item">
+                    
+                    <div>
+                        <div class="news-text">AI Chip Demand Surges: TSMC Reports Record Quarterly Revenue 📈</div>
+                        <div class="news-time">1 day ago • 5,238 views</div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    
+                    <div>
+                        <div class="news-text">Remote Work Debate Heats Up: Major Tech Companies Return to Office 🏢</div>
+                        <div class="news-time">2 days ago • 12,442 views</div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    
+                    <div>
+                        <div class="news-text">South Korea's Startup Ecosystem Hits $100 Billion Milestone 🚀</div>
+                        <div class="news-time">1 day ago • 9,127 views</div>
+                    </div>
+                </div>
+            </div>
+
+
+                    <!-- Comment  -->
+                    <div class="comment-system">
+                        <div class="comment-trigger">
+                            <div>
+                                <img src = "static/logo.jpg" class="logo">
+                            </div>
+                            <button class="comment-input-trigger" onclick="showCommentAssistant()">
+                                Add a comment...
+                            </button>
+                        </div>
+        
+                        <div class="comment-assistant" id="commentAssistant">
+                            <div class="assistant-header">
+                                <div class="step-indicator">
+                                    <div class="step active">1</div>
+                                    <div class="step">2</div>
+                                    <div class="step">3</div>
+                                </div>
+                            </div>
+        
+                            <div class="assistant-content">
+                                <div class="question" id="currentQuestion"></div>
+                                <div class="context" id="currentContext"></div>
+                                <div class="textarea-wrapper">
+                                    <textarea 
+                                        class="comment-textarea" 
+                                        id="commentInput" 
+                                        placeholder="Write your response..."
+                                    ></textarea>
+                                    
+                                </div>
+        
+                                <div class="ai-suggestions">
+                                    <div class="suggestions-header">
+                                        <i class="fas fa-lightbulb"></i>
+                                        AI-recommended responses
+                                    </div>
+                                    <div class="suggestion-chips" id="suggestionChips"></div>
+                                </div>
+                            </div>
+        
+                            <div>
+                                <div class="comment-preview" id="commentPreview">
+                                    <div class="preview-label">Preview and edit your comment</div>
+                                    <textarea 
+                                        class="comment-textarea" 
+                                        id="finalComment"
+                                        placeholder="Your generated comment will appear here..."
+                                    ></textarea>
+                                </div>
+                            </div>
+        
+                            <div class="assistant-actions">
+                                <button class="btn btn-secondary" onclick="prevStep()" id="prevBtn">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                                <button class="btn btn-primary" onclick="nextStep()" id="nextBtn">
+                                    Next <i class="fas fa-arrow-right"></i>
+                                </button>
+                                <button class="btn btn-primar" onclick="submitComment()" id="submitBtn" style="display: none;">
+                                    Submit <i class="fas fa-check-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+        
+                        
+                    </div>            
+        </aside>
+    </div>
+
+     
+
+
+            
+
+
+
+
+       
+    <script>
+        
+        // Data for each step of the comment creation process
+        const steps = [
+        {
+            question: "What part of this post impressed you the most?",
+            context: "Mention specific numbers, results, or insights.",
+            suggestions: [
+                "The results of using GPT-4 for customer service automation are impressive.",
+                "The 95% accuracy rate is incredible.",
+                "The emphasis on the importance of human oversight is noteworthy."
+            ]
+        },
+        {
+            question: "Share similar experiences or opinions.",
+            context: "Sharing your own experiences or observed examples would be great.",
+            suggestions: [
+                "Our team also used ChatGPT to improve customer support.",
+                "We faced similar challenges during the initial stages of AI implementation...",
+                "I've seen similar results in other industries."
+            ]
+        },
+        {
+            question: "What suggestions or questions do you have?",
+            context: "Provide constructive suggestions or specific questions to continue the conversation.",
+            suggestions: [
+                "Adding sentiment analysis might yield even better results.",
+                "I'd like to know more about the fine-tuning process.",
+                "Have similar results been achieved in other languages?"
+            ]
+        }
+        ];
+
+        // State management
+        let currentStep = 0;
+        let answers = ['', '', ''];
+        let draftTimeoutId = null;
+
+        function showCommentAssistant() {
+            document.getElementById('commentAssistant').style.display = 'block';
+            updateAssistantContent();
+        }
+
+        function updateAssistantContent() {
+            document.getElementById('currentQuestion').textContent = steps[currentStep].question;
+            document.getElementById('currentContext').textContent = steps[currentStep].context;
+            document.getElementById('commentInput').value = answers[currentStep];
+            
+            // Update step indicators
+            document.querySelectorAll('.step').forEach((step, index) => {
+                step.classList.toggle('active', index === currentStep);
+            });
+
+            // Update suggestions
+            updateSuggestions(); // Call this function to update suggestion chips.
+
+            
+            // Update buttons
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            prevBtn.style.display = currentStep === 0 ? 'none' : 'flex';
+            
+            if (currentStep === steps.length - 1) {
+                nextBtn.innerHTML = 'Generate Comment <i class="fas fa-magic"></i>';
+            } else {
+                nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
+            }
+
+            // Show/hide preview
+            document.getElementById('commentPreview').style.display = 
+                currentStep === steps.length ? 'block' : 'none';
+        }
+
+        // Apply suggestion
+        function applySuggestion(suggestion) {
+                const textarea = document.getElementById('commentInput');
+                textarea.value = suggestion;
+                updateCharacterCount();
+            }
+
+        function prevStep() {
+            if (currentStep > 0) {
+                answers[currentStep] = document.getElementById('commentInput').value;
+                currentStep--;
+                updateAssistantContent();
+            }
+        }
+
+        function nextStep() {
+            const input = document.getElementById('commentInput').value.trim();
+            
+            if (!input) {
+                alert('Please provide a response before continuing.');
+                return;
+            }
+
+            answers[currentStep] = input;
+
+            if (currentStep === steps.length - 1) {
+                // Generate final comment
+                generateComment();
+            } else {
+                currentStep++;
+                updateAssistantContent();
+            }
+        }
+
+        function generateComment() {
+            // Show preview section
+            const preview = document.getElementById('commentPreview');
+            preview.style.display = 'block';
+            
+            // Generate comment text
+            const generatedComment = answers.join('\n\n');
+            document.getElementById('finalComment').value = generatedComment;
+            
+            // Update buttons for final step
+            document.getElementById('nextBtn').innerHTML = 'Post Comment <i class="fas fa-paper-plane"></i>';
+            document.getElementById('nextBtn').onclick = submitComment;
+        }
+
+        // Update AI suggestions
+        function updateSuggestions() {
+            const container = document.getElementById('suggestionChips');
+            container.innerHTML = '';
+            steps[currentStep].suggestions.forEach((suggestion) => {
+                const chip = document.createElement('div');
+                chip.className = 'suggestion-chip';
+                chip.textContent = suggestion;
+                chip.onclick = () => applySuggestion(suggestion);
+                container.appendChild(chip);
+            });
+        }
+
+
+        function submitComment() {
+            const finalComment = document.getElementById('finalComment').value;
+            const commentsList = document.getElementById('commentsList');
+            if (!finalComment) {
+            alert('Please write your comment before submission.');
+            return;
+            }
+
+            // Create new comment element
+            const comment = document.createElement('div');
+            comment.className = 'comment';
+            comment.innerHTML = `
+                <div class="post-header">
+                    <div class="profile-mini">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="author-info">
+                        <h3>Jihoon Choi</h3>
+                        <p>Senior Data Scientist at Airbnb | Researcher</p>
+                        <div class="post-time">
+                            2 hours ago • <i class="fas fa-globe-americas"></i>
+                        </div>
+                    </div>
+                    <button class="more-options">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+                <div class="comment-text">${finalComment}</div>
+            `;
+            
+            // Add comment to list
+            commentsList.prepend(comment);
+            
+            // Reset editor
+            currentStep = 0;
+            answers = ['', '', ''];
+            document.getElementById('commentAssistant').style.display = 'none';
+            document.getElementById('commentPreview').style.display = 'none';
+            document.getElementById('commentInput').value = '';
+            document.getElementById('finalComment').value = '';
+            
+            // Reset next button
+            const nextBtn = document.getElementById('nextBtn');
+            nextBtn.innerHTML = 'Next <i class="fas fa-arrow-right"></i>';
+            nextBtn.onclick = nextStep;
+        }
+    </script>
+</body>
+</html>
